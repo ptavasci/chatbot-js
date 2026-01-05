@@ -41,10 +41,10 @@ async function populateDatabase() {
     await itCollection.add({
       ids: itData.map((item, index) => `item-${index}`),
       documents: itData.map(
-        (item) => `${item.nombre}: ${item.descripcion}. Precio: ${item.precio} USD.`
+        (item) => `${item.nombre}: ${item.descripcion}. Para consultar el precio exacto, usar la tool get_product_price.`
       ),
       metadatas: itData.map((item) => ({
-        price: item.precio,
+        price_note: "Use get_product_price tool",
       })),
     });
     console.log("Populated it_supplies_collection");

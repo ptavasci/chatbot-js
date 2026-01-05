@@ -85,7 +85,7 @@
     }
 
     // Función para mostrar notificaciones de actividad
-    function showActivityNotification(activity) {
+    function showActivityNotification(activity, displayDuration) {
       const notifContainer = document.getElementById('activity-notifications');
       const notif = document.createElement('div');
       notif.className = 'activity-notification';
@@ -111,11 +111,11 @@
       // Hacer que aparezca con animación
       setTimeout(() => notif.classList.add('show'), 10);
 
-      // Remover después de 3 segundos
+      // Remover después del tiempo especificado
       setTimeout(() => {
         notif.classList.remove('show');
         setTimeout(() => notif.remove(), 300);
-      }, 3000);
+      }, displayDuration);
     }
 
     // Función para procesar metadata y mostrar notificaciones
@@ -123,9 +123,11 @@
       if (!metadata || !metadata.activities) return;
 
       // Mostrar cada actividad con un pequeño delay entre ellas
+      // La duración aumenta 3 segundos por cada notificación: 3s, 6s, 9s, etc.
       metadata.activities.forEach((activity, index) => {
         setTimeout(() => {
-          showActivityNotification(activity);
+          const displayDuration = 3000 + (index * 3000); // 3s, 6s, 9s...
+          showActivityNotification(activity, displayDuration);
         }, index * 400); // 400ms entre cada notificación
       });
 

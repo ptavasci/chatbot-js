@@ -36,7 +36,7 @@ const getProductPrice = new DynamicTool({
     }
 
     console.log(`[TOOL USE] get_product_price called with: "${productName}" (Raw args: ${JSON.stringify(args)})`);
-    
+
     tracker.trackTool(
       'get_product_price',
       'Consultando precio exacto de producto',
@@ -50,7 +50,7 @@ const getProductPrice = new DynamicTool({
     try {
       const product = products.find(p => p.nombre.toLowerCase().includes(productName.toLowerCase()));
       if (product) {
-        return `El precio de ${product.nombre} es ${product.precio} USD.`;
+        return `El precio de ${product.nombre} es ${product.precio_real} USD.`;
       }
       return "Producto no encontrado. Por favor, verifica el nombre e intenta de nuevo.";
     } catch (error) {

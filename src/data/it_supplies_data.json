@@ -1,252 +1,302 @@
 [
   {
     "nombre": "Monitor Gamer LG 27\" UltraGear",
-    "precio": 350,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 350,
     "descripcion": "Monitor de 27 pulgadas con 144Hz de tasa de refresco y 1ms de tiempo de respuesta. Ideal para gaming competitivo."
   },
   {
     "nombre": "Teclado Mecánico Corsair K70 RGB",
-    "precio": 160,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 160,
     "descripcion": "Teclado mecánico con switches Cherry MX Red y retroiluminación RGB personalizable."
   },
   {
     "nombre": "Mouse Logitech G502 Hero",
-    "precio": 50,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 50,
     "descripcion": "Mouse ergonómico con sensor HERO de 25,600 DPI y 11 botones programables."
   },
   {
     "nombre": "Procesador AMD Ryzen 7 5800X",
-    "precio": 450,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 450,
     "descripcion": "Procesador de 8 núcleos y 16 hilos, ideal para gaming y creación de contenido."
   },
   {
     "nombre": "Placa de Video NVIDIA RTX 3060 Ti",
-    "precio": 600,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 600,
     "descripcion": "Placa de video con 8GB GDDR6, excelente para jugar en 1440p."
   },
   {
     "nombre": "Memoria RAM Corsair Vengeance 16GB (2x8GB)",
-    "precio": 90,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 90,
     "descripcion": "Kit de memoria RAM DDR4 a 3200MHz con disipador de calor de aluminio."
   },
   {
     "nombre": "Disco SSD Samsung 980 Pro 1TB",
-    "precio": 130,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 130,
     "descripcion": "SSD NVMe M.2 con velocidades de lectura de hasta 7000MB/s."
   },
   {
     "nombre": "Fuente de Alimentación EVGA 750W Gold",
-    "precio": 110,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 110,
     "descripcion": "Fuente modular con certificación 80 Plus Gold para máxima eficiencia."
   },
   {
     "nombre": "Gabinete NZXT H510 Flow",
-    "precio": 100,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 100,
     "descripcion": "Gabinete con panel frontal perforado para un flujo de aire optimizado."
   },
   {
     "nombre": "Motherboard ASUS ROG Strix B550-F",
-    "precio": 190,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 190,
     "descripcion": "Motherboard para socket AM4 con soporte para PCIe 4.0 y Wi-Fi 6."
   },
   {
     "nombre": "Auriculares HyperX Cloud II",
-    "precio": 100,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 100,
     "descripcion": "Auriculares con sonido envolvente 7.1 y micrófono con cancelación de ruido."
   },
   {
     "nombre": "Silla Gamer Noblechairs Hero",
-    "precio": 400,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 400,
     "descripcion": "Silla ergonómica de alta calidad con soporte lumbar integrado."
   },
   {
     "nombre": "Webcam Logitech C920 HD Pro",
-    "precio": 80,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 80,
     "descripcion": "Webcam Full HD 1080p ideal para streaming y videollamadas."
   },
   {
     "nombre": "Micrófono Blue Yeti USB",
-    "precio": 130,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 130,
     "descripcion": "Micrófono de condensador profesional con múltiples patrones polares."
   },
   {
     "nombre": "Router ASUS RT-AX88U Wi-Fi 6",
-    "precio": 300,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 300,
     "descripcion": "Router de alto rendimiento con tecnología Wi-Fi 6 y 8 puertos LAN."
   },
   {
     "nombre": "Impresora Epson EcoTank L3250",
-    "precio": 250,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 250,
     "descripcion": "Impresora multifuncional con sistema de tanques de tinta de alta capacidad."
   },
   {
     "nombre": "Escáner Canon CanoScan LiDE 400",
-    "precio": 90,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 90,
     "descripcion": "Escáner plano compacto con alimentación por USB."
   },
   {
     "nombre": "Disco Rígido Externo WD My Passport 2TB",
-    "precio": 70,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 70,
     "descripcion": "Disco portátil con protección por contraseña y software de respaldo."
   },
   {
     "nombre": "Pendrive SanDisk Ultra Flair 128GB",
-    "precio": 20,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 20,
     "descripcion": "Pendrive USB 3.0 con carcasa de metal duradera."
   },
   {
     "nombre": "Hub USB-C Anker 7-en-1",
-    "precio": 45,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 45,
     "descripcion": "Adaptador con HDMI 4K, puertos USB 3.0 y lector de tarjetas SD."
   },
   {
     "nombre": "Tableta Digitalizadora Wacom Intuos M",
-    "precio": 200,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 200,
     "descripcion": "Tableta con lápiz sensible a la presión, ideal para diseño gráfico."
   },
   {
     "nombre": "Monitor Dell UltraSharp 24\"",
-    "precio": 280,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 280,
     "descripcion": "Monitor profesional con calibración de color de fábrica y bordes ultradelgados."
   },
   {
     "nombre": "Teclado Inalámbrico Logitech MX Keys",
-    "precio": 120,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 120,
     "descripcion": "Teclado premium diseñado para programadores y creativos."
   },
   {
     "nombre": "Mouse Inalámbrico Logitech MX Master 3S",
-    "precio": 100,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 100,
     "descripcion": "Mouse ergonómico avanzado con scroll electromagnético MagSpeed."
   },
   {
     "nombre": "Laptop Lenovo Legion 5 Pro",
-    "precio": 1522,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 1522,
     "descripcion": "Laptop gamer con pantalla QHD de 165Hz y procesador Ryzen 7."
   },
   {
     "nombre": "MacBook Air M2",
-    "precio": 1200,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 1200,
     "descripcion": "Laptop ultradelgada con el chip M2 de Apple y pantalla Liquid Retina."
   },
   {
     "nombre": "iPad Pro 11\" M2",
-    "precio": 800,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 800,
     "descripcion": "Tablet potente con pantalla ProMotion y soporte para Apple Pencil."
   },
   {
     "nombre": "Kindle Paperwhite",
-    "precio": 140,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 140,
     "descripcion": "Lector de libros electrónicos con pantalla de 6.8\" y luz cálida ajustable."
   },
   {
     "nombre": "Smartwatch Samsung Galaxy Watch 5",
-    "precio": 250,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 250,
     "descripcion": "Reloj inteligente con monitoreo de salud avanzado y GPS."
   },
   {
     "nombre": "Parlantes Edifier R1280T",
-    "precio": 120,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 120,
     "descripcion": "Parlantes de estantería activos con sonido de alta fidelidad."
   },
   {
     "nombre": "Cámara Sony ZV-E10",
-    "precio": 700,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 700,
     "descripcion": "Cámara mirrorless diseñada para vlogging con sensor APS-C."
   },
   {
     "nombre": "Lente Sigma 16mm f/1.4 DC DN",
-    "precio": 400,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 400,
     "descripcion": "Lente gran angular luminoso para cámaras Sony E-mount."
   },
   {
     "nombre": "Trípode Manfrotto Element MII",
-    "precio": 150,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 150,
     "descripcion": "Trípode de aluminio ligero y estable para fotografía de viajes."
   },
   {
     "nombre": "Tarjeta de Memoria SanDisk Extreme Pro 128GB",
-    "precio": 35,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 35,
     "descripcion": "Tarjeta SDXC con velocidades de hasta 200MB/s."
   },
   {
     "nombre": "Batería Externa Anker PowerCore 26800",
-    "precio": 65,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 65,
     "descripcion": "Power bank de alta capacidad con 3 puertos USB."
   },
   {
     "nombre": "Cargador de Pared GaN 65W",
-    "precio": 40,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 40,
     "descripcion": "Cargador compacto con tecnología GaN y múltiples puertos USB-C."
   },
   {
     "nombre": "Cable HDMI 2.1 Certificado 2m",
-    "precio": 15,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 15,
     "descripcion": "Cable de alta velocidad con soporte para 8K a 60Hz y 4K a 120Hz."
   },
   {
     "nombre": "Pasta Térmica Arctic MX-6",
-    "precio": 10,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 10,
     "descripcion": "Pasta térmica de alto rendimiento para CPUs y GPUs."
   },
   {
     "nombre": "Kit de Herramientas iFixit Pro Tech",
-    "precio": 75,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 75,
     "descripcion": "Kit completo para reparación de dispositivos electrónicos."
   },
   {
     "nombre": "Soporte para Monitor Doble",
-    "precio": 60,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 60,
     "descripcion": "Brazo articulado para dos monitores de hasta 27 pulgadas."
   },
   {
     "nombre": "Alfombrilla de Mouse XL SteelSeries",
-    "precio": 30,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 30,
     "descripcion": "Alfombrilla de tela de gran tamaño para mouse y teclado."
   },
   {
     "nombre": "Organizador de Cables",
-    "precio": 15,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 15,
     "descripcion": "Set de clips y fundas para mantener los cables ordenados."
   },
   {
     "nombre": "Limpiador de Pantallas Kit",
-    "precio": 12,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 12,
     "descripcion": "Spray limpiador y paño de microfibra antiestático."
   },
   {
     "nombre": "UPS APC Back-UPS 850VA",
-    "precio": 160,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 160,
     "descripcion": "Sistema de alimentación ininterrumpida con protección contra sobretensiones."
   },
   {
     "nombre": "Servidor NAS Synology DS220+",
-    "precio": 300,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 300,
     "descripcion": "Servidor de almacenamiento en red de 2 bahías para hogar y oficina."
   },
   {
     "nombre": "Switch TP-Link Gigabit 8 Puertos",
-    "precio": 25,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 25,
     "descripcion": "Switch de red compacto con puertos 10/100/1000 Mbps."
   },
   {
     "nombre": "Adaptador Bluetooth 5.0 USB",
-    "precio": 15,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 15,
     "descripcion": "Dongle USB para añadir conectividad Bluetooth a PCs."
   },
   {
     "nombre": "Placa de Sonido Externa Focusrite Scarlett 2i2",
-    "precio": 180,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 180,
     "descripcion": "Interfaz de audio USB ideal para grabación de música y podcasts."
   },
   {
     "nombre": "Controlador MIDI Akai MPK Mini MK3",
-    "precio": 110,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 110,
     "descripcion": "Teclado controlador compacto con 25 teclas y 8 pads."
   },
   {
     "nombre": "Gafas de Realidad Virtual Meta Quest 2",
-    "precio": 400,
+    "precio": "Usar tool get_product_price para consultar",
+    "precio_real": 400,
     "descripcion": "Visor de VR todo en uno con procesador Snapdragon XR2."
   }
 ]
