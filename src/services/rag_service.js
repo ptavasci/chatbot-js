@@ -27,20 +27,12 @@ async function rag(query, collectionName) {
   const retriever = vectorStore.asRetriever();
   const docs = await retriever.invoke(query);
 
-  // console.log(`[RAG DEBUG] Query: "${query}"`);
-  // console.log(`[RAG DEBUG] Retrieved ${docs.length} documents:`);
-  // docs.forEach((doc, i) => {
-  //   console.log(`  Doc ${i+1}: ${doc.pageContent.substring(0, 100)}...`);
-  // });
-
   const combineDocumentsChain = loadQAStuffChain(model, { prompt: QA_PROMPT });
 
   const response = await combineDocumentsChain.call({
     input_documents: docs,
     question: query,
   });
-
-  // console.log(`[RAG DEBUG] Response: "${response.text}"`);
 
   return response.text;
 }

@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 const { BaseListChatMessageHistory } = require("@langchain/core/chat_history");
 const { HumanMessage, AIMessage, BaseMessage } = require("@langchain/core/messages");
 const { ConversationSummaryBufferMemory } = require("@langchain/classic/memory");

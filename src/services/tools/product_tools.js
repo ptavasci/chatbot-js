@@ -1,7 +1,7 @@
 const { DynamicTool } = require("@langchain/core/tools");
 const { z } = require("zod");
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 const { getTracker } = require("../activity_tracker");
 
 // Read data dynamically to avoid issues if the file changes or if direct import behaves unexpectedly
@@ -28,7 +28,7 @@ const getProductPrice = new DynamicTool({
     let productName = "";
     if (typeof args === 'string') {
       productName = args;
-    } else if (args && args.input) {
+    } else if (args?.input) {
       productName = args.input;
     } else if (args && typeof args === 'object') {
       // Try to find any string property if 'input' is missing

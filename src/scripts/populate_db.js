@@ -1,12 +1,12 @@
 require("dotenv").config();
 const { ChromaClient } = require("chromadb");
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
 const { OpenAIEmbeddings } = require("@langchain/openai");
 
 const client = new ChromaClient({
   host: process.env.CHROMA_HOST || "localhost",
-  port: parseInt(process.env.CHROMA_PORT || "8000")
+  port: Number.parseInt(process.env.CHROMA_PORT || "8000")
 });
 
 const langchainEmbedder = new OpenAIEmbeddings();
@@ -29,7 +29,9 @@ async function populateDatabase() {
     try {
       await client.deleteCollection({ name: "it_supplies_collection" });
       console.log("Deleted existing it_supplies_collection");
-    } catch (e) { }
+    } catch (e) {
+      console.error(e);
+    }
 
     const itCollection = await client.getOrCreateCollection({
       name: "it_supplies_collection",
@@ -57,7 +59,9 @@ async function populateDatabase() {
     try {
       await client.deleteCollection({ name: "frecuent_questions_collection" });
       console.log("Deleted existing frecuent_questions_collection");
-    } catch (e) { }
+    } catch (e) {
+      console.error(e);
+    }
 
     const storeInfoCollection = await client.getOrCreateCollection({
       name: "frecuent_questions_collection",
