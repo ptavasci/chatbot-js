@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAIA insumos - Chat V1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <header>
+      <h1>GAIA insumos</h1>
+      <div class="status">Online</div>
+    </header>
+
+    <main id="chat-history">
+      <div class="message bot-message">
+        <span class="message-info">Asistente</span>
+        ¡Hola! Bienvenido a GAIA insumos. ¿En qué puedo ayudarte hoy?
+      </div>
+    </main>
+
+    <div id="loader" class="loader-container">
+      <div class="typing-indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <footer>
+      <form id="chat-form">
+        <input type="text" id="message" placeholder="Escribe tu mensaje aquí..." autocomplete="off" required />
+        <button type="submit">Enviar</button>
+      </form>
+    </footer>
+  </div>
+
+  <script>
+    const chatHistory = document.getElementById("chat-history");
+    const loader = document.getElementById("loader");
+    const chatForm = document.getElementById("chat-form");
+    const messageInput = document.getElementById("message");
+
+    function appendMessage(role, text) {
+      const messageDiv = document.createElement("div");
+      messageDiv.className = `message ${role === 'user' ? 'user-message' : 'bot-message'}`;
+
+      const infoSpan = document.createElement("span");
+      infoSpan.className = "message-info";
+      infoSpan.textContent = role === 'user' ? 'Tú' : 'Asistente';
+
+      messageDiv.appendChild(infoSpan);
+      messageDiv.appendChild(document.createTextNode(text));
+
+      chatHistory.appendChild(messageDiv);
+      chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
+    chatForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const message = messageInput.value.trim();
+      if (!message) return;
+
+      appendMessage('user', message);
+      messageInput.value = "";
+      loader.style.display = "block";
+      chatHistory.scrollTop = chatHistory.scrollHeight;
+
+      try {
+        const res = await fetch("/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message }),
+        });
+
+        const data = await res.json();
+        loader.style.display = "none";
+        appendMessage('bot', data.response);
+      } catch (error) {
+        console.error("Error:", error);
+        loader.style.display = "none";
+        appendMessage('bot', "Lo siento, hubo un error al procesar tu mensaje.");
+      }
+    });
+  </script>
+</body>
+
+</html>
