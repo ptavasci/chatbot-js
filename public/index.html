@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIA insumos - Demos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .demos-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 24px;
+        }
+
+        .demos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .demo-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #06b6d4, #3b82f6);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .demo-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(6, 182, 212, 0.2);
+        }
+
+        .demo-card:hover::before {
+            opacity: 1;
+        }
+
+        .demo-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+
+        .demo-card .version-badge {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.15);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            width: fit-content;
+        }
+
+        .demo-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .demo-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .demo-card ul li {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .demo-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .demo-link {
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .demo-link button {
+            width: 100%;
+        }
+
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 32px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        footer {
+            padding: 16px 24px;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>GAIA insumos</h1>
+            <div class="status">Demos Disponibles</div>
+        </header>
+
+        <main class="demos-container">
+            <div>
+                <p class="welcome-text">Selecciona la versión del chatbot que deseas probar</p>
+
+                <div class="demos-grid">
+                    <!-- Chatbot V1 Card -->
+                    <div class="demo-card">
+                        <div class="version-badge">Versión 1</div>
+                        <h2>Chat Básico</h2>
+                        <p>Asistente conversacional simple con capacidades fundamentales para responder consultas
+                            generales.</p>
+                        <ul>
+                            <li>Interfaz intuitiva</li>
+                            <li>Respuestas rápidas</li>
+                            <li>Conversación fluida</li>
+                        </ul>
+                        <a href="chatbot-v1.html" class="demo-link">
+                            <button>Abrir Demo V1</button>
+                        </a>
+                    </div>
+
+                    <!-- Chatbot V2 Card -->
+                    <div class="demo-card">
+                        <div class="version-badge">Versión 2</div>
+                        <h2>IA Agent Avanzado</h2>
+                        <p>Asistente inteligente con herramientas avanzadas para consultas técnicas y gestión de
+                            sesiones.</p>
+                        <ul>
+                            <li>Acceso a herramientas</li>
+                            <li>Consultas técnicas</li>
+                            <li>Gestión de sesiones</li>
+                            <li>Base de conocimiento</li>
+                        </ul>
+                        <a href="chatbot-v2.html" class="demo-link">
+                            <button>Abrir Demo V2</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 GAIA insumos - Sistema de Asistencia Inteligente</p>
+        </footer>
+    </div>
+</body>
+
+</html>
