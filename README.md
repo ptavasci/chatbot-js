@@ -137,8 +137,9 @@ Este proyecto es un chatbot avanzado para **GAIA insumos**, una tienda de insumo
 
 ## 🖥️ Interfaces Web
 
-- **ChatBot V1**: [http://localhost:3001/chatbot-v1.html](http://localhost:3001/chatbot-v1.html)
-- **ChatBot V2**: [http://localhost:3001/chatbot-v2.html](http://localhost:3001/chatbot-v2.html)
+- **Página de Inicio**: [http://localhost:3001/](http://localhost:3001/) - Página principal para seleccionar entre las demos disponibles.
+- **ChatBot V1 (Chat Básico)**: [http://localhost:3001/chatbot-v1.html](http://localhost:3001/chatbot-v1.html)
+- **ChatBot V2 (IA Agent Avanzado)**: [http://localhost:3001/chatbot-v2.html](http://localhost:3001/chatbot-v2.html)
 
 > **Nota**: El puerto por defecto es 3001. Si necesitas usar el puerto 3000, modifica `docker-compose.yml`.
 
