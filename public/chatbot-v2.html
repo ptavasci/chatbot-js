@@ -52,6 +52,20 @@
     const messageInput = document.getElementById("message");
     const chatIdInput = document.getElementById("chat_id");
 
+    // Generate or retrieve a unique session ID
+    function getSessionId() {
+      let sessionId = sessionStorage.getItem('chatbot_session_id');
+      if (!sessionId) {
+        sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        sessionStorage.setItem('chatbot_session_id', sessionId);
+      }
+      return sessionId;
+    }
+
+    // Auto-populate chat_id field with session ID
+    chatIdInput.value = getSessionId();
+    chatIdInput.readOnly = true; // Make it read-only so users don't change it accidentally
+
     function appendMessage(role, text) {
       const messageDiv = document.createElement("div");
       messageDiv.className = `message ${role === 'user' ? 'user-message' : 'bot-message'}`;
