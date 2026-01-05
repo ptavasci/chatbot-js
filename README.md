@@ -33,6 +33,20 @@ Este proyecto es un chatbot avanzado para **GAIA insumos**, una tienda de insumo
 - ✅ **Monitoreo**: Integración completa con **LangSmith** para trazas y debugging.
 - ✅ **Dos colecciones ChromaDB**: una para productos y otra para información de la tienda.
 
+## 🎬 Demo
+
+A continuación se muestra una demostración completa del **ChatBot V2** en acción, mostrando una conversación real con un cliente:
+
+![Demo ChatBot V2](./screenshots/demo.gif)
+
+**La demo ilustra las capacidades avanzadas del sistema:**
+- ✅ **Búsqueda semántica de productos** mediante RAG (Retrieval-Augmented Generation)
+- ✅ **Memoria contextual** que mantiene el hilo de la conversación
+- ✅ **Uso inteligente de herramientas** (Tools) como `get_product_price` para obtener información precisa
+- ✅ **Enrutamiento automático** entre agentes especializados (IT_Agent y FrequentQuestionAgent)
+- ✅ **Razonamiento y cálculos** en tiempo real para responder consultas complejas
+- ✅ **Manejo de información de la tienda** (horarios, medios de pago, políticas)
+
 ## 📂 Estructura del Proyecto
 
 ```
@@ -122,7 +136,7 @@ Este proyecto es un chatbot avanzado para **GAIA insumos**, una tienda de insumo
         En tu archivo `.env`, agrega las siguientes líneas:
         ```env
         CHROMA_HOST=localhost
-        CHROMA_PORT=8002
+        CHROMA_PORT=8002  # Puerto expuesto por Docker (ChromaDB usa 8000 internamente)
         ```
     4.  **Poblar la base de datos:**
         ```bash
@@ -133,15 +147,26 @@ Este proyecto es un chatbot avanzado para **GAIA insumos**, una tienda de insumo
         npm start
         ```
     6.  **Acceder a la aplicación:**
-        La aplicación estará disponible en `http://localhost:3001`.
+        La aplicación estará disponible en `http://localhost:3000`.
 
 ## 🖥️ Interfaces Web
 
+### Con Docker
 - **Página de Inicio**: [http://localhost:3001/](http://localhost:3001/) - Página principal para seleccionar entre las demos disponibles.
 - **ChatBot V1 (Chat Básico)**: [http://localhost:3001/chatbot-v1.html](http://localhost:3001/chatbot-v1.html)
 - **ChatBot V2 (IA Agent Avanzado)**: [http://localhost:3001/chatbot-v2.html](http://localhost:3001/chatbot-v2.html)
 
-> **Nota**: El puerto por defecto es 3001. Si necesitas usar el puerto 3000, modifica `docker-compose.yml`.
+### Ejecución Local (sin Docker)
+- **Página de Inicio**: [http://localhost:3000/](http://localhost:3000/)
+- **ChatBot V1 (Chat Básico)**: [http://localhost:3000/chatbot-v1.html](http://localhost:3000/chatbot-v1.html)
+- **ChatBot V2 (IA Agent Avanzado)**: [http://localhost:3000/chatbot-v2.html](http://localhost:3000/chatbot-v2.html)
+
+> **Nota sobre Puertos**:
+> - **Puerto interno de la aplicación**: 3000 (definido en `src/app.js`)
+> - **Puerto expuesto con Docker**: 3001 (mapeado en `docker-compose.yml` como `3001:3000`)
+> - **Puerto de ChromaDB con Docker**: 8002 externamente, 8000 internamente
+>
+> Si ejecutas la aplicación localmente sin Docker, usa el puerto 3000. Si usas Docker, accede por el puerto 3001.
 
 ## 🧪 Tests
 
@@ -179,6 +204,53 @@ También puedes observar los logs en la consola del servidor. Cada vez que el ag
 - `[TOOL USE] get_product_price called with: ...`
 - `[TOOL USE] get_current_time called ...`
 - `[TOOL USE] it_product_search called with: ...`
+
+## 📊 Monitoreo con LangSmith
+
+Este proyecto está integrado con **LangSmith**, una plataforma de observabilidad y debugging para aplicaciones de LangChain. LangSmith permite visualizar y analizar cada interacción del chatbot en tiempo real.
+
+![LangSmith Dashboard](./screenshots/LangSmith.png)
+
+### ¿Qué es LangSmith?
+
+**LangSmith** es una herramienta de desarrollo que proporciona:
+- 🔍 **Trazabilidad completa**: Visualiza cada paso de la ejecución del agente
+- 🐛 **Debugging avanzado**: Identifica problemas en las cadenas de razonamiento
+- 📈 **Métricas de rendimiento**: Monitorea tiempos de respuesta y uso de tokens
+- 🧪 **Testing y evaluación**: Compara diferentes versiones del prompt y configuraciones
+- 📝 **Historial de conversaciones**: Almacena y revisa interacciones pasadas
+
+### Configuración de LangSmith
+
+Para habilitar LangSmith en tu proyecto, configura las siguientes variables de entorno en tu archivo [`.env`](.env.example):
+
+```env
+# LangSmith Configuration
+LANGCHAIN_TRACING_V2=true                           # Habilita el trazado de LangChain
+LANGCHAIN_ENDPOINT=https://api.smith.langchain.com  # Endpoint de la API de LangSmith
+LANGCHAIN_API_KEY="lsv2_pt_..."                     # Tu clave API de LangSmith
+LANGCHAIN_PROJECT=chatbot-api-js                    # Nombre del proyecto en LangSmith
+```
+
+**Pasos para obtener tu API Key:**
+
+1. Crea una cuenta gratuita en [smith.langchain.com](https://smith.langchain.com)
+2. Ve a **Settings** → **API Keys**
+3. Crea una nueva API Key
+4. Copia la key y agrégala a tu archivo `.env`
+
+### Visualización de Trazas
+
+Una vez configurado, cada interacción con el chatbot generará una traza en LangSmith que muestra:
+- La consulta del usuario
+- El razonamiento del agente evaluador
+- Las herramientas utilizadas y sus resultados
+- La respuesta final generada
+- Tiempos de ejecución y consumo de tokens
+
+Accede al dashboard de LangSmith en [https://smith.langchain.com](https://smith.langchain.com) para ver las trazas en tiempo real.
+
+> **Nota**: LangSmith es opcional. El chatbot funcionará perfectamente sin estas configuraciones, simplemente no tendrás visibilidad de las trazas de ejecución.
 
 ## 🔧 Solución de Problemas
 
