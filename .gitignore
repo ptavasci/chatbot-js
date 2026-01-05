@@ -6,7 +6,7 @@ node_modules
 # Testing
 coverage
 test_results/
-conversation_memories/
+conversation_memories/*
 !conversation_memories/.gitkeep
 !conversation_memories/default.json
 

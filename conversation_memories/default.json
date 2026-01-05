@@ -1,0 +1,170 @@
+[
+  {
+    "type": "human",
+    "data": {
+      "content": "¿Cuánto cuesta y qué métodos de pago aceptan?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "La Laptop Lenovo Legion 5 Pro tiene un precio de 1,200 USD. Aceptamos como métodos de pago tarjetas de crédito, débito y transferencias bancarias. Si necesitas más información, no dudes en preguntar. ¡Estoy aquí para ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "¿Abren los domingos?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "No, los domingos estamos cerrados. Nuestro horario de atención es de lunes a viernes de 9 a 18 hs y los sábados de 10 a 14 hs. Si tienes más preguntas, ¡aquí estoy para ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "¿Y el lunes?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "El lunes abrimos a las 9:00 AM. Si necesitas más información o tienes alguna otra pregunta, no dudes en decírmelo. ¡Estoy aquí para ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "Hola"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "¡Hola! ¿Cómo estás? Si necesitas ayuda con algo, no dudes en decírmelo."
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "Hola"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "¡Hola de nuevo! ¿En qué puedo ayudarte hoy?"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "Que procesador tiene la legion 5?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "La Laptop Lenovo Legion 5 puede estar equipada con diferentes procesadores dependiendo de la configuración. Generalmente, se ofrece con procesadores AMD Ryzen 5 o Ryzen 7, así como con procesadores Intel Core i5 o i7 en algunas versiones.\n\nSi necesitas información más específica sobre un modelo en particular, ¡házmelo saber!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "a que precio la tienen y como se puede pagar?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "La Laptop Lenovo Legion 5 tiene un precio que varía según la configuración, pero generalmente se encuentra en un rango de 1,000 a 1,200 USD. Aceptamos como métodos de pago tarjetas de crédito, débito y transferencias bancarias. Si necesitas más información o detalles sobre un modelo específico, ¡no dudes en preguntar!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "y la lenovo legion 5 pro?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "La Laptop Lenovo Legion 5 Pro tiene un precio de 1,500 USD. Aceptamos como métodos de pago tarjetas de crédito, débito y transferencias bancarias. Si necesitas más información o detalles sobre sus características, ¡házmelo saber!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "la puedo pasar a buscar el domingo?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "No, los domingos estamos cerrados, por lo que no podrás recogerla ese día. Te recomiendo que vengas de lunes a sábado durante nuestro horario de atención. Si necesitas más información, ¡aquí estoy para ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "y mañana martes?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Sí, mañana martes abrimos a las 9:00 AM. Puedes venir a recoger la Laptop Lenovo Legion 5 Pro en ese horario. Si tienes más preguntas o necesitas ayuda con algo más, ¡no dudes en decírmelo!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "Hola"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "¡Hola! ¿Cómo estás? ¿En qué puedo ayudarte hoy?"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "que procesador trae la lenovo legion 5 pro?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "La Laptop Lenovo Legion 5 Pro está equipada con un procesador AMD Ryzen 7, que ofrece un excelente rendimiento, especialmente para juegos y tareas intensivas. Si necesitas más detalles sobre sus características o especificaciones, ¡házmelo saber!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "a que precio la tienen?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "La Laptop Lenovo Legion 5 Pro tiene un precio de 1,500 USD. Si necesitas más información o tienes alguna otra pregunta, ¡estoy aquí para ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "como la puedo pagar?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Aceptamos como métodos de pago para la Laptop Lenovo Legion 5 Pro tarjetas de crédito, débito y transferencias bancarias. Si necesitas más información o tienes alguna otra pregunta, ¡no dudes en decírmelo!"
+    }
+  }
+]
