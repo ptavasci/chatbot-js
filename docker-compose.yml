@@ -16,6 +16,7 @@ services:
       - CHROMA_HOST=chroma
       - CHROMA_PORT=8000
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - TZ=America/Buenos_Aires
     depends_on:
       - chroma
     volumes:
