@@ -3,6 +3,7 @@ const { Chroma } = require("@langchain/community/vectorstores/chroma");
 const { PromptTemplate } = require("@langchain/core/prompts");
 const { model } = require("../langchain");
 const { embedder, client } = require("../chroma");
+const { getTracker } = require("../activity_tracker");
 
 const INSTRUCTION = `Eres "FrequentQuestionsAgent", un asistente de IA altamente capacitado y amigable para "GAIA insumos", una tienda líder en insumos de informática.
 
@@ -26,16 +27,31 @@ Answer:`;
 
 const prompt = PromptTemplate.fromTemplate(INSTRUCTION);
 
-async function runFrequentQuestionAgent(question, memory) {
+async function runFrequentQuestionAgent(question, memory, requestId = 'default') {
+  const tracker = getTracker(requestId);
+  
+  tracker.trackAgent(
+    'FrequentQuestionsAgent',
+    'Procesando consulta sobre información de la tienda'
+  );
+  
   // Using new Chroma with explicit client to avoid import issues
   const vectorStore = new Chroma(embedder, {
     collectionName: "frecuent_questions_collection",
     index: client,
   });
 
+  const retriever = vectorStore.asRetriever(3);
+  
+  tracker.trackTool(
+    'store_info_search',
+    'Buscando información de la tienda en base vectorial',
+    question
+  );
+  
   const chain = ConversationalRetrievalQAChain.fromLLM(
     model,
-    vectorStore.asRetriever(3), // Retrieving top 3 as per README
+    retriever, // Retrieving top 3 as per README
     {
       // memory: memory, // Handle memory manually
       qaChainOptions: {

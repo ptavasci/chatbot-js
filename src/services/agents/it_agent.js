@@ -5,8 +5,9 @@ const { ChatPromptTemplate, MessagesPlaceholder } = require("@langchain/core/pro
 const { Chroma } = require("@langchain/community/vectorstores/chroma");
 const { model } = require("../langchain");
 const { embedder, client } = require("../chroma");
-const { getProductPrice } = require("../tools/product_tools");
-const { getTimeTool } = require("../tools/mcp_tool");
+const { getProductPrice, setRequestId: setProductToolRequestId } = require("../tools/product_tools");
+const { getTimeTool, setRequestId: setMcpToolRequestId } = require("../tools/mcp_tool");
+const { getTracker } = require("../activity_tracker");
 
 const INSTRUCTION = `Eres IT_Agent, un experto en insumos de informática para GAIA insumos. Tienes información detallada sobre diversos artículos tecnológicos, incluyendo sus descripciones, precios y características.
 
@@ -26,7 +27,18 @@ TIENES ACCESO A HERRAMIENTAS:
 
 Si te preguntan por el precio de un producto específico, DEBES usar la herramienta 'get_product_price'.`;
 
-async function runITAgent(question, memory) {
+async function runITAgent(question, memory, requestId = 'default') {
+  const tracker = getTracker(requestId);
+  
+  // Establecer requestId en las tools para que puedan trackear
+  setProductToolRequestId(requestId);
+  setMcpToolRequestId(requestId);
+  
+  tracker.trackAgent(
+    'IT_Agent',
+    'Procesando consulta sobre productos de informática'
+  );
+  
   // 1. Setup Vector Store
   const vectorStore = new Chroma(embedder, {
     collectionName: "it_supplies_collection",
@@ -52,6 +64,13 @@ async function runITAgent(question, memory) {
       }
 
       console.log(`[TOOL USE] it_product_search called with: "${query}" (Raw args: ${JSON.stringify(args)})`);
+      
+      tracker.trackTool(
+        'it_product_search',
+        'Buscando información de productos en base vectorial',
+        query
+      );
+      
       const docs = await retriever.invoke(query);
       return docs.map(d => d.pageContent).join("\n\n");
     }

@@ -2,11 +2,19 @@ const { DynamicTool } = require("@langchain/core/tools");
 const { z } = require("zod");
 const fs = require('fs');
 const path = require('path');
+const { getTracker } = require("../activity_tracker");
 
 // Read data dynamically to avoid issues if the file changes or if direct import behaves unexpectedly
 const dataPath = path.join(process.cwd(), 'src', 'data', 'it_supplies_data.json');
 const rawData = fs.readFileSync(dataPath, 'utf-8');
 const products = JSON.parse(rawData);
+
+// Variable para almacenar el requestId actual (será establecido desde el agente)
+let currentRequestId = 'default';
+
+function setRequestId(requestId) {
+  currentRequestId = requestId;
+}
 
 const getProductPrice = new DynamicTool({
   name: "get_product_price",
@@ -15,6 +23,7 @@ const getProductPrice = new DynamicTool({
     input: z.string().describe("El nombre del producto de informática a buscar")
   }),
   func: async (args) => {
+    const tracker = getTracker(currentRequestId);
     // Robust input handling
     let productName = "";
     if (typeof args === 'string') {
@@ -27,6 +36,12 @@ const getProductPrice = new DynamicTool({
     }
 
     console.log(`[TOOL USE] get_product_price called with: "${productName}" (Raw args: ${JSON.stringify(args)})`);
+    
+    tracker.trackTool(
+      'get_product_price',
+      'Consultando precio exacto de producto',
+      productName
+    );
 
     if (!productName) {
       return "Por favor, proporciona el nombre de un producto.";
@@ -47,4 +62,5 @@ const getProductPrice = new DynamicTool({
 
 module.exports = {
   getProductPrice,
+  setRequestId,
 };

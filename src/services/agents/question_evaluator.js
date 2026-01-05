@@ -1,6 +1,7 @@
 const { PromptTemplate } = require("@langchain/core/prompts");
 const { StringOutputParser } = require("@langchain/core/output_parsers");
 const { model } = require("../langchain");
+const { getTracker } = require("../activity_tracker");
 
 const INSTRUCTION = `You are an intelligent assistant that ONLY identifies whether inputs are questions about IT products or about store information.
 
@@ -50,7 +51,14 @@ const outputParser = new StringOutputParser();
 
 const chain = prompt.pipe(model).pipe(outputParser);
 
-async function evaluateQuestion(input) {
+async function evaluateQuestion(input, requestId = 'default') {
+  const tracker = getTracker(requestId);
+  
+  tracker.trackAgent(
+    'QuestionEvaluator',
+    'Evaluando tipo de pregunta (it-questions, frecuent-questions, n/a)'
+  );
+  
   const result = await chain.invoke({ input });
   return result.trim();
 }

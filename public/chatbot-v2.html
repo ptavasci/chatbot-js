@@ -31,6 +31,9 @@
       </div>
     </div>
 
+    <!-- Contenedor de notificaciones de actividad -->
+    <div id="activity-notifications" class="activity-notifications"></div>
+
     <footer>
       <form id="chat-form">
         <div class="v2-inputs">
@@ -81,6 +84,58 @@
       chatHistory.scrollTop = chatHistory.scrollHeight;
     }
 
+    // Función para mostrar notificaciones de actividad
+    function showActivityNotification(activity) {
+      const notifContainer = document.getElementById('activity-notifications');
+      const notif = document.createElement('div');
+      notif.className = 'activity-notification';
+
+      // Iconos según el tipo
+      const icons = {
+        'agent': '🤖',
+        'tool': '🔧',
+        'mcp': '🔌'
+      };
+
+      const icon = icons[activity.type] || '⚙️';
+      notif.innerHTML = `
+        <span class="activity-icon">${icon}</span>
+        <div class="activity-content">
+          <div class="activity-name">${activity.name}</div>
+          <div class="activity-desc">${activity.description}</div>
+        </div>
+      `;
+
+      notifContainer.appendChild(notif);
+
+      // Hacer que aparezca con animación
+      setTimeout(() => notif.classList.add('show'), 10);
+
+      // Remover después de 3 segundos
+      setTimeout(() => {
+        notif.classList.remove('show');
+        setTimeout(() => notif.remove(), 300);
+      }, 3000);
+    }
+
+    // Función para procesar metadata y mostrar notificaciones
+    function processMetadata(metadata) {
+      if (!metadata || !metadata.activities) return;
+
+      // Mostrar cada actividad con un pequeño delay entre ellas
+      metadata.activities.forEach((activity, index) => {
+        setTimeout(() => {
+          showActivityNotification(activity);
+        }, index * 400); // 400ms entre cada notificación
+      });
+
+      // Log del resumen en consola para debug
+      if (metadata.summary) {
+        console.log('📊 Activity Summary:', metadata.summary);
+        console.log('🔍 Category:', metadata.category);
+      }
+    }
+
     chatForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const message = messageInput.value.trim();
@@ -103,6 +158,12 @@
 
         const data = await res.json();
         loader.style.display = "none";
+
+        // Procesar metadata si existe
+        if (data.metadata) {
+          processMetadata(data.metadata);
+        }
+
         appendMessage('bot', data.response);
       } catch (error) {
         console.error("Error:", error);
