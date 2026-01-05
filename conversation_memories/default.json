@@ -2,42 +2,6 @@
   {
     "type": "human",
     "data": {
-      "content": "¿Cuánto cuesta y qué métodos de pago aceptan?"
-    }
-  },
-  {
-    "type": "ai",
-    "data": {
-      "content": "La Laptop Lenovo Legion 5 Pro tiene un precio de 1,200 USD. Aceptamos como métodos de pago tarjetas de crédito, débito y transferencias bancarias. Si necesitas más información, no dudes en preguntar. ¡Estoy aquí para ayudarte!"
-    }
-  },
-  {
-    "type": "human",
-    "data": {
-      "content": "¿Abren los domingos?"
-    }
-  },
-  {
-    "type": "ai",
-    "data": {
-      "content": "No, los domingos estamos cerrados. Nuestro horario de atención es de lunes a viernes de 9 a 18 hs y los sábados de 10 a 14 hs. Si tienes más preguntas, ¡aquí estoy para ayudarte!"
-    }
-  },
-  {
-    "type": "human",
-    "data": {
-      "content": "¿Y el lunes?"
-    }
-  },
-  {
-    "type": "ai",
-    "data": {
-      "content": "El lunes abrimos a las 9:00 AM. Si necesitas más información o tienes alguna otra pregunta, no dudes en decírmelo. ¡Estoy aquí para ayudarte!"
-    }
-  },
-  {
-    "type": "human",
-    "data": {
       "content": "Hola"
     }
   },
@@ -165,6 +129,138 @@
     "type": "ai",
     "data": {
       "content": "Aceptamos como métodos de pago para la Laptop Lenovo Legion 5 Pro tarjetas de crédito, débito y transferencias bancarias. Si necesitas más información o tienes alguna otra pregunta, ¡no dudes en decírmelo!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "hola"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "¡Hola! ¿Cómo estás? ¿En qué puedo ayudarte hoy?"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "que horarios tienen?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Los horarios de atención de GAIA insumos son de lunes a viernes de 9 a 18 hs, y los sábados de 10 a 14 hs. Los domingos estamos cerrados. Si necesitas más información, ¡aquí estoy para ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "que procesador trae la lenovo legion 5 pro?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "La Laptop Lenovo Legion 5 Pro está equipada con un procesador AMD Ryzen 7 5800X, que cuenta con 8 núcleos y 16 hilos, lo que la hace ideal para gaming y creación de contenido. Si necesitas más información sobre sus características o especificaciones, ¡házmelo saber!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "a que precio la tienen?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "La Laptop Lenovo Legion 5 Pro tiene un precio de 1,500 USD. Si necesitas más información o tienes alguna otra pregunta, ¡estoy aquí para ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "la puedo pasar a buscar el domingo?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "No, los domingos estamos cerrados, por lo que no podrás recoger la laptop ese día. Te recomiendo que vengas de lunes a sábado durante nuestro horario de atención. Si necesitas más información, ¡aquí estoy para ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "y el martes?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Sí, el martes abrimos a las 9:00 AM. Puedes venir a recoger la Laptop Lenovo Legion 5 Pro en ese horario. Si tienes más preguntas o necesitas ayuda con algo más, ¡no dudes en decírmelo!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "perfecto, como la puedo pagar?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Aceptamos como métodos de pago para la Laptop Lenovo Legion 5 Pro tarjetas de crédito, débito y transferencias bancarias. Si necesitas más información o tienes alguna otra pregunta, ¡estoy aquí para ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "organizadores de cables tienen?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Sí, tenemos organizadores de cables. Ofrecemos un set de clips y fundas para mantener los cables ordenados, y su precio es de 15 USD. \n\nSi necesitas más información o estás interesado en adquirirlo, ¡házmelo saber!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "cuanto seria el total?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "El total por el set de organizadores de cables, que cuesta 15 USD, sería de 15 USD. Si deseas realizar la compra o necesitas más información, ¡estaré encantado de ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "incluyendo la lenovo?"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "El precio de la Laptop Lenovo Legion 5 Pro es de 1,500 USD y el set de organizadores de cables cuesta 15 USD. \n\nPor lo tanto, el total sería:\n\n**1,500 USD (Lenovo Legion 5 Pro) + 15 USD (Organizador de Cables) = 1,515 USD.**\n\nSi deseas realizar la compra o necesitas más información, ¡estaré encantado de ayudarte!"
+    }
+  },
+  {
+    "type": "human",
+    "data": {
+      "content": "ok, la paso a buscar el domingo, ahora hago la transferencia"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "No, los domingos estamos cerrados, por lo que no podrás recoger la laptop ese día. Te recomiendo que vengas de lunes a sábado durante nuestro horario de atención. Si necesitas más información, ¡aquí estoy para ayudarte!"
     }
   }
 ]
