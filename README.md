@@ -30,6 +30,7 @@ Este proyecto es un chatbot avanzado para **GAIA insumos**, una tienda de insumo
     - 🛠️ **it_product_search**: RAG como herramienta para buscar información de productos.
     - 🛠️ **get_product_price**: Herramienta personalizada para consultar precios exactos.
     - 🛠️ **get_current_time**: Integración simulada con un **MCP Server** de tiempo.
+- ✅ **Tracking de Actividades**: Sistema de notificaciones en tiempo real que muestra al usuario qué agentes, tools y MCPs se están usando durante cada consulta.
 - ✅ **Monitoreo**: Integración completa con **LangSmith** para trazas y debugging.
 - ✅ **Dos colecciones ChromaDB**: una para productos y otra para información de la tienda.
 
@@ -204,6 +205,64 @@ También puedes observar los logs en la consola del servidor. Cada vez que el ag
 - `[TOOL USE] get_product_price called with: ...`
 - `[TOOL USE] get_current_time called ...`
 - `[TOOL USE] it_product_search called with: ...`
+
+## 🔔 Sistema de Tracking de Actividades
+
+El **ChatBot V2** incluye un sistema de tracking que informa al usuario sobre las operaciones internas que se ejecutan durante cada consulta. Cada vez que el chatbot utiliza un agente, una herramienta (tool) o un servicio MCP, se envía metadata al frontend que muestra notificaciones sutiles y animadas.
+
+![Activity Tracking Demo](./screenshots/ActivityTracking.png)
+
+### Características del Tracking
+
+- **🤖 Agentes**: Notifica cuando se activa un agente especializado (QuestionEvaluator, IT_Agent, FrequentQuestionAgent)
+- **🔧 Tools**: Muestra qué herramientas se están usando (búsquedas vectoriales, consultas de precios)
+- **🔌 MCPs**: Indica cuando se consultan servicios externos (Model Context Protocol)
+- **⏱️ Tiempo Real**: Las notificaciones aparecen secuencialmente mientras se procesa la consulta
+- **🎨 Diseño Moderno**: Animaciones sutiles con glassmorphism en la esquina inferior derecha
+
+### Metadata Retornada
+
+Cada respuesta del ChatBot V2 incluye metadata detallada:
+
+```json
+{
+  "response": "El precio de la laptop gamer es $1200 USD.",
+  "metadata": {
+    "activities": [
+      {
+        "type": "agent",
+        "name": "QuestionEvaluator",
+        "description": "Evaluando tipo de pregunta...",
+        "timestamp": "2024-01-05T20:00:00.000Z"
+      },
+      {
+        "type": "tool",
+        "name": "get_product_price",
+        "description": "Consultando precio exacto de producto",
+        "input": "laptop gamer",
+        "timestamp": "2024-01-05T20:00:03.000Z"
+      }
+    ],
+    "summary": {
+      "total": 4,
+      "agents": 2,
+      "tools": 2,
+      "mcps": 0
+    },
+    "requestId": "550e8400-e29b-41d4-a716-446655440000",
+    "category": "it-questions"
+  }
+}
+```
+
+### Beneficios
+
+- **Transparencia**: El usuario entiende qué está haciendo el chatbot en cada momento
+- **Educación**: Aprende sobre la complejidad del sistema de agentes e IA
+- **Confianza**: Ve de dónde proviene la información que recibe
+- **Debug**: Facilita identificar y reportar problemas específicos
+
+Para más detalles sobre la implementación, consulta la documentación completa en [`docs/ACTIVITY_TRACKING.md`](docs/ACTIVITY_TRACKING.md).
 
 ## 📊 Monitoreo con LangSmith
 

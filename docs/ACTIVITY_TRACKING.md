@@ -2,6 +2,8 @@
 
 Este documento explica el sistema de tracking de actividades que muestra en tiempo real al usuario qué agentes, tools y MCPs están siendo utilizados durante cada interacción con el chatbot.
 
+![Activity Tracking Demo](../screenshots/ActivityTracking.png)
+
 ## 📋 Descripción General
 
 El sistema captura y muestra notificaciones sutiles en el frontend que informan al usuario sobre las operaciones que el chatbot está realizando "por detrás", incluyendo:
