@@ -11,7 +11,7 @@ const getTimeTool = new DynamicTool({
     // Simulating MCP Server call
     console.log("[TOOL USE] get_current_time called (Simulating MCP Server call...)");
     const now = new Date();
-    return `The current time is ${now.toLocaleTimeString('en-US', { timeZone: 'America/New_York' })} (Eastern Time).`;
+    return `La hora actual es ${now.toLocaleTimeString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires', hour: '2-digit', minute: '2-digit', second: '2-digit' })} (Hora de Argentina).`;
   },
 });
 
