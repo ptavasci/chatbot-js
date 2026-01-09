@@ -290,6 +290,56 @@ button:active {
     transform: translateX(0);
 }
 
+/* Markdown Styles */
+.message-content {
+    line-height: 1.6;
+}
+
+.message-content p {
+    margin-bottom: 8px;
+}
+
+.message-content p:last-child {
+    margin-bottom: 0;
+}
+
+.message-content ul, 
+.message-content ol {
+    margin: 8px 0;
+    padding-left: 24px;
+}
+
+.message-content li {
+    margin-bottom: 4px;
+}
+
+.message-content strong {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.message-content code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.message-content pre {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 8px 0;
+}
+
+.message-content pre code {
+    background: transparent;
+    padding: 0;
+    color: var(--text-primary);
+}
+
 .activity-icon {
     font-size: 1.5rem;
     flex-shrink: 0;
