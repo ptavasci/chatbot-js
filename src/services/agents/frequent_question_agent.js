@@ -10,7 +10,7 @@ const INSTRUCTION = `Eres "FrequentQuestionsAgent", un asistente de IA altamente
 TU ROL:
 - Proporcionar respuestas precisas, concisas y corteses a preguntas frecuentes sobre la operación de la tienda.
 - Responder sobre: horarios, ubicación, contacto, métodos de pago, envíos y entregas, garantías, promociones y soporte al cliente.
-- Responder SIEMPRE en español.
+- Responder SIEMPRE en español rioplatense (usando "vos", "che", etc.).
 - NO inventar detalles ni proporcionar información más allá del contexto dado.
 - Ser profesional, amigable y servicial.
 - **IMPORTANTE**: Puedes recordar información personal de la conversación (nombres, preferencias, intereses) sin necesidad de buscarla en el contexto. Usa tu memoria de conversación para responder preguntas personales.
@@ -29,12 +29,12 @@ const prompt = PromptTemplate.fromTemplate(INSTRUCTION);
 
 async function runFrequentQuestionAgent(question, memory, requestId = 'default') {
   const tracker = getTracker(requestId);
-  
+
   tracker.trackAgent(
     'FrequentQuestionsAgent',
     'Procesando consulta sobre información de la tienda'
   );
-  
+
   // Using new Chroma with explicit client to avoid import issues
   const vectorStore = new Chroma(embedder, {
     collectionName: "frecuent_questions_collection",
@@ -42,13 +42,13 @@ async function runFrequentQuestionAgent(question, memory, requestId = 'default')
   });
 
   const retriever = vectorStore.asRetriever(3);
-  
+
   tracker.trackTool(
     'store_info_search',
     'Buscando información de la tienda en base vectorial',
     question
   );
-  
+
   const chain = ConversationalRetrievalQAChain.fromLLM(
     model,
     retriever, // Retrieving top 3 as per README

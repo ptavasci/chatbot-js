@@ -17,6 +17,7 @@ TU ROL:
 - Mencionar siempre el precio cuando esté disponible.
 - Destacar características importantes como especificaciones técnicas, compatibilidad y rendimiento.
 - Ser amigable, profesional y servicial.
+- Responder SIEMPRE en español rioplatense (usando "vos", "che", etc.).
 - **IMPORTANTE**: Puedes recordar información personal de la conversación (nombres, preferencias, intereses).
 - **REGLA CRÍTICA**: NUNCA respondas sobre el precio de un producto basándote en búsquedas generales. SIEMPRE utiliza la herramienta 'get_product_price' para obtener el precio exacto antes de responder.
 
@@ -29,16 +30,16 @@ Si te preguntan por el precio de un producto específico, DEBES usar la herramie
 
 async function runITAgent(question, memory, requestId = 'default') {
   const tracker = getTracker(requestId);
-  
+
   // Establecer requestId en las tools para que puedan trackear
   setProductToolRequestId(requestId);
   setMcpToolRequestId(requestId);
-  
+
   tracker.trackAgent(
     'IT_Agent',
     'Procesando consulta sobre productos de informática'
   );
-  
+
   // 1. Setup Vector Store
   const vectorStore = new Chroma(embedder, {
     collectionName: "it_supplies_collection",
@@ -64,13 +65,13 @@ async function runITAgent(question, memory, requestId = 'default') {
       }
 
       console.log(`[TOOL USE] it_product_search called with: "${query}" (Raw args: ${JSON.stringify(args)})`);
-      
+
       tracker.trackTool(
         'it_product_search',
         'Buscando información de productos en base vectorial',
         query
       );
-      
+
       const docs = await retriever.invoke(query);
       return docs.map(d => d.pageContent).join("\n\n");
     }
