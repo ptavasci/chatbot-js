@@ -5,7 +5,7 @@ const { PromptTemplate } = require("@langchain/core/prompts");
 const { model } = require("./langchain");
 const { embedder, client } = require("./chroma");
 
-const template = `Eres un asistente experto en GAIA insumos. Usa el siguiente contexto para responder la pregunta del usuario de forma concisa. Responder SIEMPRE en español rioplatense (usando "vos", "che", etc.).
+const template = `Eres un asistente experto en GAIA insumos. Usa el siguiente contexto para responder la pregunta del usuario de forma concisa. Responder SIEMPRE en español neutro con tintes rioplatenses (usando "vos", pero evitando el uso de "che").
 
 Contexto:
 {context}
