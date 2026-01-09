@@ -30,7 +30,10 @@ async function populateDatabase() {
       await client.deleteCollection({ name: "it_supplies_collection" });
       console.log("Deleted existing it_supplies_collection");
     } catch (e) {
-      console.error(e);
+      // Ignore if collection doesn't exist
+      if (e.message && !e.message.includes("does not exist") && !e.name.includes("ChromaNotFoundError")) {
+        console.error("Error deleting collection:", e);
+      }
     }
 
     const itCollection = await client.getOrCreateCollection({
@@ -60,7 +63,10 @@ async function populateDatabase() {
       await client.deleteCollection({ name: "frecuent_questions_collection" });
       console.log("Deleted existing frecuent_questions_collection");
     } catch (e) {
-      console.error(e);
+      // Ignore if collection doesn't exist
+      if (e.message && !e.message.includes("does not exist") && !e.name.includes("ChromaNotFoundError")) {
+        console.error("Error deleting collection:", e);
+      }
     }
 
     const storeInfoCollection = await client.getOrCreateCollection({
